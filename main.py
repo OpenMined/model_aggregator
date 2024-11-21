@@ -46,6 +46,10 @@ def get_model_file(path: Path):
 
 
 def evaluate_global_model(global_model: nn.Module, dataset_path: Path) -> float:
+    if not dataset_path.is_file():
+        print("Test dataset not found at:", dataset_path)
+        return
+
     global_model.eval()
     # load the saved mnist subset
     images, labels = torch.load(str(dataset_path), weights_only=True)
@@ -197,7 +201,8 @@ def init_pretrained_aggregator_app(client: Client) -> None:
     # Copy the test dataset to the private data directory
     test_dataset_path = app_pvt_dir / TEST_DATASET_NAME
     if not test_dataset_path.is_file():
-        shutil.copy(SAMPLE_TEST_DATASET_PATH, test_dataset_path)
+        print("there are no test datasets in the private folder")
+        # shutil.copy(SAMPLE_TEST_DATASET_PATH, test_dataset_path)
 
 
 if __name__ == "__main__":
