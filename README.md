@@ -1,6 +1,6 @@
 # Model Aggregator App
 
-This app, together with the `model_local_training_app`, form a semi-FL app using SyftBox
+This app, together with the [`model_local_training_app`](https://github.com/OpenMined/model_local_training), form a semi-FL app using SyftBox
 
 ## Running in dev mode
 
