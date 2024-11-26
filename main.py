@@ -158,7 +158,7 @@ def calculate_model_accuracy(global_model_path: Path, dataset_path: Path) -> flo
     model.load_state_dict(torch.load(global_model_path, weights_only=True))
     model.eval()
     # load the saved mnist subset
-    images, labels = torch.load(dataset_path, weights_only=True)
+    images, labels = torch.load(dataset_path)
     # create a tensordataset
     dataset = TensorDataset(images, labels)
     # create a dataloader for the dataset
