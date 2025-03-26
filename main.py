@@ -1,6 +1,6 @@
 from pathlib import Path
 import shutil
-from syftbox.lib import Client
+from syft_core import Client
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, TensorDataset
