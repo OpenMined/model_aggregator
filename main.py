@@ -64,8 +64,8 @@ def init_aggregator(client: Client) -> None:
     # Copy the test dataset to the private data directory
     test_dataset_path = app_pvt_dir / TEST_DATASET_NAME
     if not test_dataset_path.is_file():
-        print(f"No test dataset found. Please copy sample test dataset from \n"
-              f"{SAMPLE_TEST_DATASET_PATH.resolve()} to {test_dataset_path.resolve()}")
+        print(f"No test dataset found. Please copy sample test dataset from: "
+              f"'{SAMPLE_TEST_DATASET_PATH.resolve()}' to '{test_dataset_path.resolve()}'")
         # shutil.copy(SAMPLE_TEST_DATASET_PATH, test_dataset_path)
 
 
